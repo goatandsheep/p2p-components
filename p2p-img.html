@@ -1,0 +1,25 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="p2p-img">
+    <template>
+        <img src="[[src]]">
+    </template>
+    <script>
+        class P2PImg extends Polymer.Element {
+            static get is() {
+                return "p2p-img";
+            }
+            static get properties() {
+                return {
+                    src: {
+                        type: String
+                    },
+                }
+            }
+            constructor() {
+                super();
+            }
+        }
+        customElements.define(P2PImg.is, P2PImg);
+    </script>
+</dom-module>

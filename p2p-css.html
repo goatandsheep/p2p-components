@@ -1,0 +1,25 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="p2p-css">
+    <template>
+        <link rel="stylesheet" href="[[href]]">
+    </template>
+    <script>
+        class P2PCss extends Polymer.Element {
+            static get is() {
+                return "p2p-css";
+            }
+            static get properties() {
+                return {
+                    href: {
+                        type: String
+                    },
+                }
+            }
+            constructor() {
+                super();
+            }
+        }
+        customElements.define(P2PCss.is, P2PCss);
+    </script>
+</dom-module>

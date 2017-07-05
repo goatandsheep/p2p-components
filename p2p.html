@@ -1,0 +1,32 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="p2p">
+    <template>
+        <[[elemType]] href="[[href]]" src="[[src]]"></[[elemType]]>
+    </template>
+    <script>
+        class P2P extends Polymer.Element {
+            static get is() {
+                return "p2p";
+            }
+            static get properties() {
+                return {
+                    href: {
+                        type: String
+                    },
+                    src: {
+                        type: String
+                    },
+                    elemType: {
+                        type: String,
+                        value: "div"
+                    }
+                }
+            }
+            constructor() {
+                super();
+            }
+        }
+        customElements.define(P2P.is, P2P);
+    </script>
+</dom-module>
