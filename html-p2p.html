@@ -1,19 +1,17 @@
-<!-- for injecting background images -->
-
 <link rel="import" href="../polymer/polymer-element.html">
 
-<dom-module id="p2p-div">
+<dom-module id="html-p2p">
     <template>
-        <div style="background-image: url('[[src]]')"></div>
+        <link rel="import" href="[[href]]">
     </template>
     <script>
-        class P2PDiv extends Polymer.Element {
+        class P2PHTML extends Polymer.Element {
             static get is() {
-                return "p2p-div";
+                return "html-p2p";
             }
             static get properties() {
                 return {
-                    src: {
+                    href: {
                         type: String
                     },
                 }
@@ -22,6 +20,6 @@
                 super();
             }
         }
-        customElements.define(P2PDiv.is, P2PDiv);
+        customElements.define(P2PHTML.is, P2PHTML);
     </script>
 </dom-module>
