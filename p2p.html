@@ -2,7 +2,7 @@
 
 <dom-module id="p2p">
     <template>
-        <[[elemType]] href="[[href]]" src="[[src]]"></[[elemType]]>
+        <slot ></slot>
     </template>
     <script>
         class P2P extends Polymer.Element {
@@ -15,18 +15,29 @@
                         type: String
                     },
                     src: {
-                        type: String
+                        type: String,
+                        computed: '_torGet(hash)'
                     },
                     elemType: {
                         type: String,
                         value: "div"
+                    },
+                    hash: {
+                        type: String
                     }
                 }
             }
-            constructor() {
-                super();
+            /**
+             * Fetches file using torFill, returns blob URL
+             * @param {String} hash - hash of the file to be downloaded
+             * @returns {String}
+             */
+            _torGet(hash) {
+                // TODO: fetch file and insert blob
+                return hash
             }
         }
         customElements.define(P2P.is, P2P);
     </script>
+    <script src="torFill.js"></script>
 </dom-module>

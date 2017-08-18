@@ -12,9 +12,22 @@
             static get properties() {
                 return {
                     href: {
-                        type: String
+                        type: String,
+                        computed: '_torGet(hash)'
                     },
+                    hash: {
+                        type: String
+                    }
                 }
+            }
+            /**
+             * Fetches file using torFill, returns blob URL
+             * @param {String} hash - hash of the file to be downloaded
+             * @returns {String}
+             */
+            _torGet(hash) {
+                // TODO: fetch file and insert blob
+                return hash
             }
             constructor() {
                 super();
@@ -22,4 +35,5 @@
         }
         customElements.define(P2PCss.is, P2PCss);
     </script>
+    <script src="torFill.js"></script>
 </dom-module>
