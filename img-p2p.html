@@ -4,6 +4,7 @@
     <template>
         <img src="[[src]]">
     </template>
+    <script src="torFill.js"></script>
     <script>
         class P2PImg extends Polymer.Element {
             static get is() {
@@ -34,6 +35,11 @@
             }
         }
         customElements.define(P2PImg.is, P2PImg);
+
+        // create an instance with createElement:
+        var el1 = document.createElement('my-element');
+
+        // ... or with the constructor:
+        var el2 = new MyElement();
     </script>
-    <script src="torFill.js"></script>
 </dom-module>

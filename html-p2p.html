@@ -4,6 +4,7 @@
     <template>
         <link rel="import" href="[[href]]">
     </template>
+    <script src="torFill.js"></script>
     <script>
         class P2PHTML extends Polymer.Element {
             static get is() {
@@ -28,11 +29,13 @@
             _torGet(hash) {
                 return hash
             }
-            constructor() {
-                super();
-            }
         }
         customElements.define(P2PHTML.is, P2PHTML);
-</script>
-<script src="torFill.js"></script>
+
+        // create an instance with createElement:
+        var el1 = document.createElement('my-element');
+
+        // ... or with the constructor:
+        var el2 = new MyElement();
+    </script>
 </dom-module>

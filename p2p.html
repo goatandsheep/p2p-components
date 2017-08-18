@@ -4,6 +4,7 @@
     <template>
         <slot ></slot>
     </template>
+    <script src="torFill.js"></script>
     <script>
         class P2P extends Polymer.Element {
             static get is() {
@@ -38,6 +39,11 @@
             }
         }
         customElements.define(P2P.is, P2P);
+
+        // create an instance with createElement:
+        var el1 = document.createElement('my-element');
+
+        // ... or with the constructor:
+        var el2 = new MyElement();
     </script>
-    <script src="torFill.js"></script>
 </dom-module>

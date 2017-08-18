@@ -6,6 +6,7 @@
     <template>
         <div style="background-image: url('[[src]]')"><slot></slot></div>
     </template>
+    <script src="torFill.js"></script>
     <script>
         class P2PDiv extends Polymer.Element {
             static get is() {
@@ -36,6 +37,11 @@
             }
         }
         customElements.define(P2PDiv.is, P2PDiv);
+
+        // create an instance with createElement:
+        var el1 = document.createElement('my-element');
+
+        // ... or with the constructor:
+        var el2 = new MyElement();
     </script>
-    <script src="torFill.js"></script>
 </dom-module>
