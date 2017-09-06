@@ -1,0 +1,51 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webtorrent/0.98.19/webtorrent.min.js" integrity="sha256-U+5SVmvqxRtbfCiD1zX31K/2cdc9nTxF+bpm07DR3/M=" crossorigin="anonymous"></script>
+<!-- https://github.com/PolymerElements/app-storage#app-localstorage-document -->
+
+<dom-module id="p2p-server">
+    <template>
+        <slot ></slot>
+    </template>
+    <script src="torFill.js"></script>
+    <script>
+        class P2PServer extends Polymer.Element {
+            static get is() {
+                return "p2p";
+            }
+            static get properties() {
+                return {
+                    href: {
+                        type: String
+                    },
+                    src: {
+                        type: String,
+                        computed: '_torGet(hash)'
+                    },
+                    elemType: {
+                        type: String,
+                        value: "div"
+                    },
+                    hash: {
+                        type: String
+                    }
+                }
+            }
+            /**
+             * Fetches file using torFill, returns blob URL
+             * @param {String} hash - hash of the file to be downloaded
+             * @returns {String}
+             */
+            _torGet(hash) {
+                // TODO: fetch file and insert blob
+                return hash
+            }
+        }
+        customElements.define(P2PServer.is, P2PServer);
+
+        // create an instance with createElement:
+        var el1 = document.createElement('my-element');
+
+        // ... or with the constructor:
+        var el2 = new MyElement();
+    </script>
+</dom-module>

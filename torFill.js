@@ -48,6 +48,16 @@ function loadTorResource(element, infohash, cb) {
 
 }
 
+function buildBlob(infohash, src) {
+  if (testRTC()) {
+    var infohash = elements[i].getAttribute('infohash')
+    loadTorResource(elements[i], infohash, fillSrc)
+  }
+  else {
+    return src
+  }
+}
+
 // main
 var elements = document.getElementsByClassName("tormedia")
 var torSrc = ""
